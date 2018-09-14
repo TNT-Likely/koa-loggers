@@ -25,6 +25,7 @@ ctx.logger[0].error('log category','some messgae')
 
 - config.filename [string] 日志文件路径 默认值 './.tmp/application.log'
 - config.pattern [string] [日志分割格式](https://log4js-node.github.io/log4js-node/dateFile.html) 默认值 '.yyyy-MM-dd'
+- daysToKeep [Number] 日志保留天数，默认7天
 - config.formatter [function] 日志内容格式化函数 默认值如下
 
 ```javascript
@@ -33,7 +34,7 @@ function(logEvent) {
   var level = logEvent.level.levelStr
   var category = logEvent.data[0]
   var data = logEvent.data[1]
-  return time + ' ' + level + ' ' + category + ' ' + data
+  return time + ' ' + level + ' ' + category + ' - ' + data
 }
 ```
 
