@@ -28,6 +28,7 @@ app.use(koaLoggers(config))
 - config.pattern [string] [日志分割格式](https://log4js-node.github.io/log4js-node/dateFile.html) 默认值 '_yyyy-MM-dd'
 - daysToKeep [Number] 日志保留天数，默认7天
 - config.formatter [function] 日志内容格式化函数 默认值如下
+- config.isGlobal [Boolean] 是否赋值到全局变量 `global._Log`
 
 ```javascript
 function(logEvent) {
